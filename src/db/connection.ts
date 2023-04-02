@@ -11,10 +11,10 @@ export const AppDataSource = new DataSource({
   username: DB_USER,
   password: DB_PASSWORD,
   database: DB_NAME,
-  entities: [__dirname + '/entities/*.ts'],
+  entities: [__dirname + '/entities/*.ts', __dirname + '/entities/*.js'],
   synchronize: true,
   logging: true,
-  migrations: [__dirname + '/migrations/*.ts'],
+  migrations: [__dirname + '/migrations/*.ts', __dirname + '/migrations/*.js'],
   migrationsRun: true,
 });
 

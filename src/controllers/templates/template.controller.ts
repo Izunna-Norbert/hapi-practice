@@ -31,7 +31,6 @@ export const templateController = (conn: EntityManager): ServerRoute[] => {
       method: 'GET',
       path: '/templates/{id}',
       handler: async (request, h) => {
-        console.log(request.params.id);
         const result = await templateRepo
           .createQueryBuilder('templates')
           .leftJoinAndSelect('templates.fields', 'fields')
