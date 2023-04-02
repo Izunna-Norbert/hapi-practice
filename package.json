@@ -1,0 +1,39 @@
+{
+  "name": "hapi-practice",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "lab -v **/*.test.ts --typescript --leaks",
+    "start:dev": "nodemon --exec ts-node src/index.ts",
+    "build": "rm -rf dist && tsc",
+    "start": "node dist/index.js",
+    "start:prod": "npm run build && npm run start",
+    "migration:generate": "ts-node ./node_modules/typeorm/cli.js migration:generate -n",
+    "migration:run": "ts-node ./node_modules/typeorm/cli.js migration:run -d ./src/db/connection.ts",
+    "migration:revert": "ts-node ./node_modules/typeorm/cli.js migration:revert"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
+    "@hapi/code": "^9.0.3",
+    "@hapi/lab": "^25.1.2",
+    "@types/colors": "^1.2.1",
+    "@types/hapi": "^18.0.8",
+    "@types/node": "^18.15.11",
+    "@types/node-emoji": "^1.8.2",
+    "nodemon": "^2.0.22",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.3"
+  },
+  "dependencies": {
+    "@hapi/hapi": "^21.3.1",
+    "colors": "^1.4.0",
+    "dotenv": "^16.0.3",
+    "node-emoji": "^1.11.0",
+    "pg": "^8.10.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.12"
+  }
+}
