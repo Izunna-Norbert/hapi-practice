@@ -1,2 +1,2 @@
-export { fakeFieldsStore } from './fields'
-export { fakeTemplateStore } from './templates'
+export { fakeFieldsStore } from './fields';
+export { fakeTemplateStore } from './templates';

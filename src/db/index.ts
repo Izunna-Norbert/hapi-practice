@@ -1,1 +1,1 @@
-export { AppDataSource, DBconnection } from './connection'
+export { AppDataSource, DBconnection } from './connection';

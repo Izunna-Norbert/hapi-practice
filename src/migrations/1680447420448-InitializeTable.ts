@@ -1,9 +1,8 @@
-import { MigrationInterface, QueryRunner } from "typeorm"
+import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class InitializeTable1680447420448 implements MigrationInterface {
-
-    public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`
+  public async up(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
         CREATE TABLE templates (
             id VARCHAR(255) PRIMARY KEY,
             title VARCHAR(255) NOT NULL,
@@ -35,13 +34,12 @@ export class InitializeTable1680447420448 implements MigrationInterface {
                ('accept_terms', 'newsletter-subscription', 'Accetto i termini e le condizioni', 'checkbox', NULL, true),
                ('submit', 'newsletter-subscription', 'Iscriviti', 'submit', NULL, false);
     `);
-    }
+  }
 
-    public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.query(`
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.query(`
         DROP TABLE fields;
         DROP TABLE templates;
     `);
-    }
-
+  }
 }
